@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100">
+  <nav class="bg-blue-600 p-4 shadow-lg">
+    <ul class="flex justify-between">
+      <li><a href="index.html" class="text-white font-bold text-2xl">Home</a></li>
+      <li>
+        <a href="cart.html" class="text-white font-bold text-3xl"><i class="fa-solid fa-cart-shopping"></i></a> 
+        <span id="cartLen" class="text-lg rounded-full bg-pink-300 py-1 px-2 ">(0)</span>
+      </li>
+      <li><a href="login.html" class="text-white font-bold text-3xl"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
+    </ul>
+  </nav>
+
+  <div class="container mx-auto mt-10 p-5">
+    <div class="flex justify-between items-center mb-5">
+      <div> 
+        <label for="category" class="text-lg font-bold">Filter by Category:</label>
+        <select id="selectCat" class="p-2 border rounded" onchange="applyFilter()">
+         
+        </select>
+      </div>
+
+      <div>
+        <label for="sortPrice" class="text-lg font-bold">Sort by Price:</label>
+        <select id="selectPrice" class="p-2 border rounded" onchange="applySort()">
+          <option value="low-high">Low to High</option>
+          <option value="high-low">High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="products-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
